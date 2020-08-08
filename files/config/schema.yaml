@@ -1,0 +1,15 @@
+header: /** @sutton-signwriting/cloud */
+author: "Steve Slevinski <slevinski@signwriting.org>"
+validator:
+  assertType: true
+types:
+  Dictionary:
+    guessFrom: Dataset
+    properties:
+      name: { nullable: false }
+  User:
+    guessFrom: Person
+    properties:
+      name: { nullable: false }
+      dictionary: { range: "Dictionary"}
+      dictionaries: { range: "Dictionary", cardinality: "(1..*)"}
